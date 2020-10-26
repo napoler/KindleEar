@@ -4,7 +4,7 @@ module: worker
 runtime: python27
 api_version: 1
 threadsafe: true
-instance_class: B1 # B2调到B4则更快的完成任务，但是消耗双倍的CPU时间，调到B1则更慢，内存额度更小，但消耗更少的CPU时间。
+instance_class: B8 # B2调到B4则更快的完成任务，但是消耗双倍的CPU时间，调到B1则更慢，内存额度更小，但消耗更少的CPU时间。 https://cloud.google.com/appengine/docs/standard/python/config/appref
 basic_scaling:
   max_instances: 2
   idle_timeout: 30m
