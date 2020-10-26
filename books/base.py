@@ -298,7 +298,10 @@ class BaseFeedBook:
                             threshold = 86400*self.oldest_article #以天为单位
                         
                         if delta.days*86400+delta.seconds > threshold:
-                            self.log.info("Skip old article(%s): %s" % (updated.strftime('%Y-%m-%d %H:%M:%S'), e.link))
+                            try:
+                                self.log.info("Skip old article(%s): %s" % (updated.strftime('%Y-%m-%d %H:%M:%S'), e.link))
+                            except:
+                                pass
                             continue
                     
                     title = e.title if hasattr(e, 'title') else 'Untitled'
